@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Menu, Contact, BookTable
+from .models import Menu, Contact, BookTable, Special
 # Register your models here.
 class MenuAdmin(admin.ModelAdmin):
     list_display = ['name','price','category']
@@ -13,3 +13,4 @@ class BookTableAdmin(admin.ModelAdmin):
 admin.site.register(BookTable, BookTableAdmin)
 
 admin.site.register(Contact)
+admin.site.register(Special)

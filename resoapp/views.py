@@ -1,12 +1,13 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User, auth 
 from django.contrib import messages
-from .models import  Contact, Menu, BookTable
+from .models import  Contact, Menu, BookTable, Special
 # Create your views here.
 
 def index(request):
     menu=Menu.objects.all()
-    return render(request, "index.html",{"menu":menu})
+    specials=Special.objects.all()
+    return render(request, "index.html",{"menu":menu,"specials":specials})
 
 def contact(request):
     if request.method== "POST":

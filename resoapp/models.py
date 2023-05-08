@@ -19,6 +19,17 @@ class Menu(models.Model):
     def __str__(self):
         return self.name
     
+class Special(models.Model):
+    name=models.CharField(max_length=30)
+    full_name=models.CharField(max_length=100)
+    short_content=models.CharField(max_length=300)
+    details=models.CharField(max_length=700)
+    img=models.ImageField()
+
+    def __str__(self):
+        return self.name
+
+    
 class Contact(models.Model):
     name=models.CharField(max_length=50)
     email=models.CharField(max_length=50)
